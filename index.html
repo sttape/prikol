@@ -1,211 +1,135 @@
-<!DOCTYPE html><html lang="ru"><head> 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-wid1th, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">  
-<title>Free Download By Parad1st</title>
-<meta property="og:title" content="Free Download"> 
-<meta property="og:site_name" content="Free Download">
-<meta property="og:image" content="images/Parad1st.png">
-<meta property="og:description" content="Free Download By Parad1st - скачать абсолютно бесплатно!"> 
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="photo">
-<meta name="twitter:title" content="Programm">
-<meta name="twitter:site" content="@fps_boost">
-<meta name="twitter:description" content="FREE!">
-<meta name="twitter:image:src" content="Parad1st.png">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&amp;display=swap" rel="stylesheet">
-<style type="text/css">
-            p {
-                margin: 0;
-            }
-
-            *, *::before, *::after {
-                box-sizing: border-box;
-            }
-
-            .overlay, .scare {
-                position: fixed;
-
-                top: 0;
-                left: 0;
-
-                height: 100vh;
-                width: 100vw;
-            }
-
-            p.overlay-title {
-                font-size: 24px;
-                font-weight: 900;
-                color: black;
-                line-height: 1;
-
-                margin-bottom: 16px;
-            }
-
-            .overlay-button {
-                display: inline-flex;
-                align-items: center;
-
-                height: 40px;
-
-                padding-right: 24px;
-                padding-left: 24px;
-
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 1;
-
-                border-radius: 4px;
-
-                margin: 4px;
-
-                cursor: pointer;
-            }
-
-            .overlay-buttons-wrapper {
-                margin: 24px -8px -8px;
-            }
-
-            #accept-button {
-                background-color: rgb(132, 94, 194);
-
-                color: white;
-            }
-
-            #decline-button {
-                color: rgb(132, 94, 194);
-
-                border: 2px solid rgb(132, 94, 194);
-            }
-
-            p.overlay-description {
-                font-size: 16px;
-                font-weight: 400;
-                color: rgba(0, 0, 0, 0.5);
-                line-height: 1.25;
-
-                margin-bottom: 16px;
-            }
-
-            a.overlay-link {
-                display: inline-block;
-
-                text-decoration: none;
-
-                font-size: 16px;
-                font-weight: 500;
-                color: rgb(132, 94, 194);
-                line-height: 1;
-
-                position: relative;
-
-                margin-top: 16px;
-            }
-
-            a.overlay-link::before {
-                position: absolute;
-
-                content: "";
-
-                height: calc(50% + 4px);
-                width: calc(100% + 8px);
-
-                bottom: -4px;
-                left: -4px;
-
-                background-color: rgba(132, 94, 194, 0.1);
-            }
-
-            .overlay-body {
-                max-width: 512px;
-
-                text-align: center;
-
-                font-family: "Inter", sans-serif;
-            }
-
-            .overlay[hidden] {
-                display: none;
-            }
-
-            .overlay {
-                z-index: 2;
-
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                background-color: #f5f6fa;
-
-                padding-right: 24px;
-                padding-left: 24px;
-            }
-
-            .scare {
-                z-index: 1;
-            }
-
-            video#video {
-                height: 100%;
-                width: 100%;
-            }
-
-            video#video::-webkit-media-controls-enclosure {
-                display:none !important;
-            }
-        </style>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Визитка</title>
+  <style>
+    :root{--bg:#0f1724;--card:#111827;--accent:#06b6d4;--muted:#94a3b8}
+    html,body{height:100%;margin:0;font-family:Inter, Roboto, Arial, sans-serif;background:linear-gradient(180deg,#071022 0%,#0b1220 100%);color:#e6eef6}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:40px}
+    .card{width:100%;max-width:420px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,0.6);text-align:center}
+    .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto 18px;border:4px solid rgba(255,255,255,0.04)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:22px;margin:6px 0 2px}
+    p.handle{margin:0;color:var(--muted);font-size:14px}
+    .links{display:flex;flex-direction:column;gap:10px;margin:20px 0}
+    .link{display:block;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.03);color:#e6eef6;text-decoration:none;border:1px solid rgba(255,255,255,0.02);transition:transform .12s,background .12s}
+    .link:hover{transform:translateY(-4px);background:linear-gradient(90deg, rgba(6,182,212,0.12), rgba(6,182,212,0.04))}
+    .link .label{display:flex;align-items:center;gap:10px;font-weight:600}
+    .small{font-size:13px;color:var(--muted);margin-top:6px}
+    /* mini player */
+    .player{display:flex;align-items:center;gap:12px;margin-top:12px;padding:10px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.02)}
+    .btn{width:44px;height:44px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#032129;border:none;cursor:pointer}
+    .progress{flex:1;display:flex;flex-direction:column;gap:6px}
+    .bar{height:8px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;cursor:pointer}
+    .bar .fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#7dd3fc)}
+    .time{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+    .vol{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center}
+    .vol input{width:80px;appearance:none;background:transparent;border-radius:6px}
+    footer{margin-top:14px;font-size:12px;color:var(--muted)}
+    @media(max-width:420px){.card{padding:20px}}
+  </style>
 </head>
 <body>
-            
-<div id="overlay" class="overlay">
-            
-            <div class="overlay-body">
-                        <p class="overlay-title">Cookies и сторонний контент</p>
-                        <p class="overlay-description">Этот сайт использует cookies что-бы собирать информацию об ошибках чтобы улучшить сайт и исправить ошибки. Приймите cookies для хорошей оптимальной производительности.</p>
-                        <div class="overlay-buttons-wrapper">
-                                    <div id="accept-button" class="overlay-button">Принять</div>
-                                    <div id="decline-button" class="overlay-button">Отклонить</div>
-            </div>
-            
-</div>
-            
-<div class="scare">
-<video id="video" class="video" src="media/video.mp4" loop></video>
-</div>
-            
-<script type="text/javascript">
-            const video = document.getElementById("video");
-            const overlay = document.getElementById("overlay");
-            const declineButton = document.getElementById("decline-button");
-            const acceptButton = document.getElementById("accept-button");
+  <div class="wrap">
+    <main class="card">
+      <div class="avatar">
+        <img src="images/Parad1st.png" alt="Аватар">
+      </div>
+      <h1 id="nickname">Parad1st</h1>
+      <p class="handle">@Parad1st</p>
 
-            let hasClicked;
+      <div class="links" aria-label="Ссылки">
+        <a class="link" href="#" target="_blank">
+          <div class="label">🔗 Портфолио</div>
+          <div class="small">Моё лучшее</div>
+        </a>
+        <a class="link" href="#" target="_blank">
+          <div class="label">📝 Блог</div>
+          <div class="small">Статьи и заметки</div>
+        </a>
+        <a class="link" href="#" target="_blank">
+          <div class="label">✉️ Контакты</div>
+          <div class="small">Написать мне</div>
+        </a>
+      </div>
 
-            window.onbeforeunload = function( ) {
-                if(hasClicked) return true;
-            };
+      <!-- Мини-плеер -->
+      <div class="player" role="region" aria-label="Музыкальный плеер">
+        <button class="btn" id="playBtn" aria-label="Воспроизвести">
+          ▶
+        </button>
+        <div class="progress">
+          <div class="bar" id="progressBar" title="Перемотать">
+            <div class="fill" id="progressFill"></div>
+          </div>
+          <div class="time"><span id="current">0:00</span><span id="duration">0:00</span></div>
+        </div>
+        <div class="vol" title="Громкость">
+          <input id="vol" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Громкость">
+        </div>
+      </div>
 
-            function buttonClick(event) {
-                event.preventDefault();
-                if(!hasClicked) hasClicked = true;
-                overlay.hidden = true;
-                video.play();
-                videoClick();
-            }
+      <audio id="audio" src="media/music.mp3"></audio>
 
-            function videoClick(event) {
-                if(event) event.preventDefault();
-                const { documentElement } = document;
-                if(documentElement.requestFullscreen) documentElement.requestFullscreen();
-                else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
-                else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
-                else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
-            }
+      <footer>Замените ссылки и аудиофайл в папке <code>media</code>. Откройте этот файл в браузере.</footer>
+    </main>
+  </div>
 
-            acceptButton.addEventListener("click", buttonClick);
-            declineButton.addEventListener("click", buttonClick);
-            video.addEventListener("click", videoClick);
-        </script>
-            
+  <script>
+    // Мини-плеер: подключение и управление
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('playBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progressFill = document.getElementById('progressFill');
+    const currentT = document.getElementById('current');
+    const durT = document.getElementById('duration');
+    const vol = document.getElementById('vol');
+
+    // Обновить кнопки и прогресс
+    function formatTime(t){
+      if(isNaN(t)) return '0:00';
+      const m = Math.floor(t/60); const s = Math.floor(t%60).toString().padStart(2,'0');
+      return `${m}:${s}`;
+    }
+
+    playBtn.addEventListener('click', ()=>{
+      if(audio.paused){ audio.play(); playBtn.textContent='⏸'; playBtn.setAttribute('aria-label','Пауза'); }
+      else{ audio.pause(); playBtn.textContent='▶'; playBtn.setAttribute('aria-label','Воспроизвести'); }
+    });
+
+    audio.addEventListener('loadedmetadata', ()=>{
+      durT.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', ()=>{
+      const pct = (audio.currentTime / (audio.duration || 1)) * 100;
+      progressFill.style.width = pct + '%';
+      currentT.textContent = formatTime(audio.currentTime);
+    });
+
+    // Перемотка по клику
+    progressBar.addEventListener('click', (e)=>{
+      const rect = progressBar.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = x * audio.duration;
+    });
+
+    vol.addEventListener('input', ()=>{ audio.volume = vol.value; });
+
+    // Поддержка пробела для play/pause
+    window.addEventListener('keydown', (e)=>{
+      if(e.code === 'Space' && document.activeElement.tagName !== 'INPUT'){
+        e.preventDefault();
+        playBtn.click();
+      }
+    });
+
+    // Если нет файла, показываем подсказку в консоли
+    audio.addEventListener('error', ()=>{
+      console.warn('Не удалось загрузить media/music.mp3. Поместите свой аудиофайл в папку media и переименуйте в music.mp3, либо укажите путь в элементе <audio>.');
+    });
+  </script>
 </body>
 </html>
