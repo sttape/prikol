@@ -6,9 +6,10 @@
   <title>Не смотри сюда!</title>
   <style>
     :root{--accent:#a855f7;--accent-light:#c084fc;--muted:#a78bfa;--text:#f3e8ff}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;padding:0;overflow:hidden;font-family:Inter,system-ui,-apple-system,sans-serif;background:linear-gradient(135deg,#1a0a2e 0%,#2d1b4e 50%,#4c1d95 100%);color:var(--text)}
-    .wrap{height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+    *{box-sizing:border-box;cursor:url('images/cursor.png'), auto !important}
+    html,body{height:100%;margin:0;padding:0;overflow:hidden;font-family:Inter,system-ui,-apple-system,sans-serif;background:#1a0a2e url('images/background.gif') center/cover fixed;color:var(--text)}
+    body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,10,46,0.7) 0%,rgba(45,27,78,0.7) 50%,rgba(76,29,149,0.7) 100%);pointer-events:none;z-index:0}
+    .wrap{height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;z-index:1}
     .card{width:100%;max-width:420px;background:linear-gradient(135deg,rgba(88,28,135,0.4),rgba(76,29,149,0.3));border:2px solid rgba(168,85,247,0.3);padding:24px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.6),0 0 40px rgba(168,85,247,0.15);text-align:center;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
     .avatar{width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 12px;border:3px solid var(--accent);box-shadow:0 0 25px rgba(168,85,247,0.5)}
     .avatar img{width:100%;height:100%;object-fit:cover}
@@ -20,16 +21,16 @@
     .link .label{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px}
     .small{font-size:12px;color:var(--muted);margin-top:4px}
     .player{display:flex;align-items:center;gap:10px;margin-top:16px;padding:12px;border-radius:14px;background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(168,85,247,0.08));border:1px solid rgba(168,85,247,0.35);box-shadow:0 4px 12px rgba(0,0,0,0.3)}
-    .btn{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#9333ea);display:flex;align-items:center;justify-content:center;color:#fff;border:none;cursor:pointer;font-size:16px;box-shadow:0 4px 12px rgba(168,85,247,0.5);transition:all 0.2s}
+    .btn{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#9333ea);display:flex;align-items:center;justify-content:center;color:#fff;border:none;font-size:16px;box-shadow:0 4px 12px rgba(168,85,247,0.5);transition:all 0.2s}
     .btn:hover{transform:scale(1.05);box-shadow:0 6px 16px rgba(168,85,247,0.7)}
     .btn:active{transform:scale(0.95)}
     .progress{flex:1;display:flex;flex-direction:column;gap:4px}
-    .bar{height:6px;background:rgba(255,255,255,0.1);border-radius:6px;overflow:hidden;cursor:pointer}
+    .bar{height:6px;background:rgba(255,255,255,0.1);border-radius:6px;overflow:hidden}
     .bar .fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-light));transition:width 0.1s;box-shadow:0 0 10px rgba(168,85,247,0.6)}
     .time{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-weight:500}
     .vol-container{display:flex;flex-direction:column;align-items:center;gap:4px}
     .vol{display:flex;align-items:center;justify-content:center;position:relative}
-    .vol input{width:70px;height:6px;appearance:none;background:rgba(255,255,255,0.1);border-radius:6px;outline:none;cursor:pointer}
+    .vol input{width:70px;height:6px;appearance:none;background:rgba(255,255,255,0.1);border-radius:6px;outline:none}
     .vol-fill{position:absolute;left:0;height:6px;background:linear-gradient(90deg,var(--accent),var(--accent-light));border-radius:6px;pointer-events:none;transition:width 0.1s;box-shadow:0 0 8px rgba(168,85,247,0.6)}
     .vol input::-webkit-slider-thumb{appearance:none;width:14px;height:14px;border-radius:50%;background:var(--accent-light);cursor:pointer;box-shadow:0 0 10px rgba(168,85,247,0.8);z-index:10}
     .vol input::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--accent-light);cursor:pointer;border:none;box-shadow:0 0 10px rgba(168,85,247,0.8)}
@@ -41,16 +42,16 @@
   <div class="wrap">
     <main class="card">
       <div class="avatar">
-        <img src="images/cat-kitten.gif" alt="Аватар">
+        <img src="images/banner_ds_Alukard.gif" alt="Аватар">
       </div>
       <h1 id="nickname">sttape</h1>
       <p class="handle">@sttape</p>
 
       <div class="links" aria-label="Links">
         <a class="link" target="_blank">
-          <div class="small">removed from life</div>
+          <div class="label">removed from life</div>
         </a>
-        <a class="link" href="https://t.me/sttape_dev" target="_blank">
+        <a class="link" href="https://t.me/sttape_dev">
           <div class="label">✉️ Contact</div>
           <div class="small" >TG: @sttape_dev</div>
         </a>
