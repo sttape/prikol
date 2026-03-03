@@ -27,11 +27,11 @@ updateVolume();
 playBtn.onclick = () => {
   if(audio.paused){
     audio.play();
-    playBtn.textContent = '⏸';
+    playBtn.textContent = 'SVO';
     playBtn.setAttribute('aria-label','Пауза');
   } else {
     audio.pause();
-    playBtn.textContent = '▶';
+    playBtn.textContent = 'ZV';
     playBtn.setAttribute('aria-label','Воспроизвести');
   }
 };
