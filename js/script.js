@@ -7,6 +7,23 @@ const durT = document.getElementById('duration');
 const vol = document.getElementById('vol');
 const volFill = document.getElementById('volFill');
 const volLabel = document.getElementById('volLabel');
+const themeToggle = document.getElementById('themeToggle');
+
+// Переключатель темы
+function toggleTheme() {
+  document.body.classList.toggle('light-theme');
+  const isLight = document.body.classList.contains('light-theme');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+// Загрузка сохраненной темы
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  document.body.classList.add('light-theme');
+  themeToggle.checked = true;
+}
+
+themeToggle.onchange = toggleTheme;
 
 function updateVolume(){
   const percent = Math.round(vol.value * 100);
