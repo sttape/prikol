@@ -44,11 +44,11 @@ updateVolume();
 playBtn.onclick = () => {
   if(audio.paused){
     audio.play();
-    playBtn.textContent = 'SVO';
+    playBtn.textContent = '▶';
     playBtn.setAttribute('aria-label','Пауза');
   } else {
     audio.pause();
-    playBtn.textContent = 'ZV';
+    playBtn.textContent = '||';
     playBtn.setAttribute('aria-label','Воспроизвести');
   }
 };
