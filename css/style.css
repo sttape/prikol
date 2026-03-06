@@ -4,7 +4,7 @@
     --muted: #a78bfa;
     --text: #ffffff;
     --bg-dark: #1a0a2e00;
-    --bg-overlay: #0000003d;
+    --bg-overlay: #00000096;
 }
 
 body.light-theme {
@@ -13,7 +13,7 @@ body.light-theme {
     --muted: #6b7280;
     --text: #1f2937;
     --bg-dark: #f3f4f6;
-    --bg-overlay: #0000003d;
+    --bg-overlay: #0000008f;
 }
 
 * {
@@ -28,7 +28,7 @@ body {
     padding: 0;
     overflow: hidden;
     font-family: Inter, system-ui, -apple-system, sans-serif;
-    background: var(--bg-dark) url('../images/background.gif') center/cover fixed;
+    background: var(--bg-dark) url('../images/background.webp') center/cover fixed;
     color: var(--text);
     transition: background 0.3s, color 0.3s
 }
