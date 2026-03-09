@@ -389,3 +389,27 @@ body.light-theme .player {
         right: 20px
     }
 }
+
+.milk-splash {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.95;
+  filter: blur(0.5px);
+  animation: milkFly 0.35s ease-out forwards;
+}
+
+@keyframes milkFly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: var(--move) scale(0.6);
+  }
+}
+
