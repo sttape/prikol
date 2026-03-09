@@ -21,6 +21,22 @@ body.light-theme {
     cursor: url('../images/cursor.png'), auto !important
 }
 
+/* Chrome, Edge, Safari */
+input[type="range"]::-webkit-slider-thumb {
+    cursor: url('../images/cursor.png'), auto !important
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    cursor: url('../images/cursor.png'), auto !important
+}
+
+/* IE/Edge Legacy */
+input[type="range"]::-ms-thumb {
+    cursor: url('../images/cursor.png'), auto !important
+}
+
+
 html,
 body {
     height: 100%;
