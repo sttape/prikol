@@ -77,25 +77,25 @@ window.onkeydown = (e) => {
 audio.onerror = () => console.warn('Не удалось загрузить аудио файл.');
 
 document.addEventListener("click", function(e) {
-  const drops = 14; // количество капель
+  const drops = 30; // количество капель
 
   for (let i = 0; i < drops; i++) {
     const drop = document.createElement("div");
     drop.classList.add("milk-splash");
 
     const angle = Math.random() * Math.PI * 2;
-    const speed = 50 + Math.random() * 50; // скорость разлёта
+    const speed = 50 + Math.random() * 5; // скорость разлёта
 
     const x = Math.cos(angle) * speed;
     const y = Math.sin(angle) * speed;
 
-    drop.style.left = e.clientX + "px";
-    drop.style.top = e.clientY + "px";
+    drop.style.left = e.clientX - 10 + "px";
+    drop.style.top = e.clientY - 10  + "px";
 
     drop.style.setProperty("--move", `translate(${x}px, ${y}px)`);
 
     // случайный размер капель
-    const size = 4 + Math.random() * 6;
+    const size = 4 + Math.random() * 10;
     drop.style.width = size + "px";
     drop.style.height = size + "px";
 
